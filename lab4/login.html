@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация - Залевская Влада</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">Обо мне</a></li>
+                <li><a href="portfolio.html">Портфолио</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li><a href="login.html">Авторизация</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Авторизация</h1>
+
+        <div class="form-container">
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Логин</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="agree" name="agree" required>
+                        <label for="agree">Согласен на обработку персональных данных</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Войти</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Залевская Влада.</p>
+    </footer>
+
+    <script>
+        // Класс для хранения данных пользователя
+        class UserData {
+            constructor(username, email, password, agree) {
+                this.username = username;
+                this.email = email;
+                this.password = password;
+                this.agree = agree;
+                this.timestamp = new Date().toLocaleString();
+            }
+
+            // Метод для форматированного вывода в консоль
+            displayToConsole() {
+                console.log("=== ДАННЫЕ ПОЛЬЗОВАТЕЛЯ ===");
+                console.log(`Логин: ${this.username}`);
+                console.log(`Email: ${this.email}`);
+                console.log(`Пароль: ${'*'.repeat(this.password.length)}`);
+                console.log(`Согласие на обработку: ${this.agree ? 'Да' : 'Нет'}`);
+                console.log(`Время отправки: ${this.timestamp}`);
+                console.log("===========================");
+            }
+        }
+
+        // Обработчик отправки формы
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Получаем значения из формы
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const agree = document.getElementById('agree').checked;
+            
+            // Создаем объект с данными пользователя
+            const userData = new UserData(username, email, password, agree);
+            
+            // Выводим данные в консоль
+            userData.displayToConsole();
+            
+            // Оповещаем пользователя
+            alert('Данные успешно отправлены! Проверьте консоль браузера.');
+            
+            // Очищаем форму
+            this.reset();
+        });
+    </script>
+</body>
+</html>
