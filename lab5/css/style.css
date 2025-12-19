@@ -72,13 +72,13 @@ nav a {
   font-size: 1rem;
   border-radius: 25px;
   display: inline-block;
-  transition: all 0.3s ease; /* анимация наведения курсора на кнопку */
+  transition: all 0.3s ease;
 }
 
-nav a:hover { /* псевдокласс для анимации */
+nav a:hover {
   background: var(--primary-dark);
-  transform: translateY(-2px); /* поднятие кнопки */
-  box-shadow: 0 4px 8px var(--shadow); /* тень */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow);
 }
 
 /* Основная область контента */
@@ -131,19 +131,20 @@ main {
   object-fit: cover;
   margin-top: 10px;
   object-position: center top;
-  animation: float 3s ease-in-out infinite; /* запускает анимацию фото*/
+  animation: float 3s ease-in-out infinite;
 }
-@keyframes float { /* определение анимации фото*/
+@keyframes float {
   0% {
-    transform: translateY(0px); /* начало цикла исходная позиция*/
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px); /* середина цикла исходная позиция на 10 пикселей вверх*/
+    transform: translateY(-10px);
   }
   100% {
-    transform: translateY(0px); /* конец цикла исходная позиция*/
+    transform: translateY(0px);
   }
 }
+
 /* Блок с навыками в карточках */
 .expertise {
   padding: 40px 0;
@@ -175,7 +176,6 @@ main {
   max-width: 300px;
   min-width: 250px;
 }
-
 
 .expertise-item h3 {
   color: var(--text-color);
@@ -225,7 +225,6 @@ main {
   max-width: 400px;
   min-width: 300px;
 }
-
 
 .achievement h4 {
   color: var(--primary-color);
@@ -363,7 +362,6 @@ td {
 }
 
 /* Выравнивание для таблиц */
-/* "Мое образование" все по левому выравниванию */
 table:first-of-type th:nth-child(1),
 table:first-of-type td:nth-child(1) {
   text-align: left;
@@ -382,7 +380,6 @@ table:first-of-type td:nth-child(3) {
   width: 40%;
 }
 
-/* "Дополнительное образование" по левому, центру и правому*/
 table:nth-of-type(2) th:nth-child(1),
 table:nth-of-type(2) td:nth-child(1) {
   text-align: left;
@@ -420,7 +417,6 @@ table:nth-of-type(2) td:nth-child(3) {
   grid-template-rows: auto 1fr;
   gap: 15px;
 }
-
 
 .skill-category h4 {
   color: var(--text-color);
@@ -650,4 +646,167 @@ footer {
   background: var(--primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px var(--shadow);
+}
+
+/* новые стили для лр5 */
+
+/* Стили для валидации формы */
+.error {
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.hint {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Стили статусов и уведомлений */
+.form-status {
+    padding: 12px;
+    border-radius: 8px;
+    margin: 15px 0;
+    text-align: center;
+    display: none;
+    font-weight: 500;
+}
+
+.form-status.success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.form-status.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.form-status.info {
+    background-color: #dbeafe;
+    color: #1e40af;
+    border: 1px solid #bfdbfe;
+}
+
+.data-status {
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-align: center;
+    display: none;
+    font-weight: 500;
+}
+
+.data-status.success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.data-status.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.data-status.info {
+    background-color: #dbeafe;
+    color: #1e40af;
+    border: 1px solid #bfdbfe;
+}
+
+/* Стили для отключенных кнопок */
+.submit-btn:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.submit-btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+    background-color: #9ca3af;
+}
+
+/* Анимация загрузки */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.loading {
+    animation: pulse 1.5s infinite;
+}
+
+/* Стили для кнопок API */
+.api-test-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.refresh-btn {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.refresh-btn:hover {
+    background-color: #4338ca;
+}
+
+.refresh-btn:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Стили для таблиц с данными API */
+.api-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.api-data-table th {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.api-data-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.api-data-table tr:hover {
+    background-color: var(--bg-accent);
+}
+
+/* Стили для предпросмотра JSON данных */
+pre#apiDataPreview {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-top: 10px;
 }

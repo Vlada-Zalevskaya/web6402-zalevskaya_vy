@@ -45,6 +45,7 @@ function recSumTo(n) {
  * @param {*} n
  */
 function factorial(n) {
+  if (n < 0) return null;
   if (n === 0 || n === 1) return 1;
   let result = 1;
   for (let i = 2; i <= n; i++) {
@@ -68,8 +69,10 @@ function isBinary(n) {
  * @param {*} n
  */
 function fibonacci(n) {
-  if (n <= 1) return n;
-  
+  if (n < 0) return null;
+  if (n === 0) return 0;
+  if (n === 1) return 1;
+
   let a = 0;
   let b = 1;
   
@@ -154,8 +157,7 @@ function deepEqual(firstObject, secondObject) {
   if (firstObject === secondObject) return true;
   
   // Проверка на null и что оба являются объектами
-  if (firstObject === null || secondObject === null || 
-      typeof firstObject !== 'object' || typeof secondObject !== 'object') {
+  if (firstObject === null || secondObject === null || typeof firstObject !== 'object' || typeof secondObject !== 'object') {
     return false;
   }
   
@@ -184,13 +186,13 @@ function deepEqual(firstObject, secondObject) {
   }
   
   // Обычные объекты - получаем все ключи (включая undefined)
-  const keys1 = Object.getOwnPropertyNames(firstObject);
+  const keys1 = Object.getOwnPropertyNames(firstObject); //все св-ва объекта
   const keys2 = Object.getOwnPropertyNames(secondObject);
   
-  if (keys1.length !== keys2.length) return false;
+  if (keys1.length !== keys2.length) return false; //если разное количество св-в, не равны
   
   for (const key of keys1) {
-    // Проверяем наличие ключа во втором объекте
+    // Есть ли каждый ключ из первого объекта во втором
     if (!Object.prototype.hasOwnProperty.call(secondObject, key)) {
       return false;
     }

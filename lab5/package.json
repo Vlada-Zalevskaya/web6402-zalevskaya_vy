@@ -1,0 +1,144 @@
+{
+  "name": "portfolio-website-lab5",
+  "version": "1.0.0",
+  "description": "Веб-сайт портфолио с mock JSON сервером для лабораторной работы №5",
+  "main": "server.js",
+  "scripts": {
+    "mock": "json-server --watch db.json --port 3000",
+    "mock-dev": "nodemon --exec \"json-server --watch db.json --port 3000\"",
+    "start": "json-server --watch db.json --port 3000",
+    "dev": "nodemon --exec \"json-server --watch db.json --port 3000\""
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "mock-json-server",
+    "laboratory",
+    "education",
+    "product-manager",
+    "frontend",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": {
+    "name": "Залевская Влада",
+    "email": "lovenika2015@mail.ru",
+    "url": "https://github.com/Vlada-Zalevskaya"
+  },
+  "contributors": [
+    {
+      "name": "Залевская Влада",
+      "email": "lovenika2015@mail.ru"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vlada-Zalevskaya/portfolio-website-lab5.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Vlada-Zalevskaya/portfolio-website-lab5/issues"
+  },
+  "homepage": "https://github.com/Vlada-Zalevskaya/portfolio-website-lab5#readme",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.10",
+    "@babel/preset-env": "^7.22.10",
+    "axios": "^1.5.0",
+    "babel-jest": "^29.6.2",
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "jest": "^29.6.2",
+    "jest-environment-jsdom": "^29.6.2",
+    "json-server": "^1.0.0-beta.3",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.2",
+    "supertest": "^6.3.3"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/test/**/*.spec.js"
+    ],
+    "collectCoverageFrom": [
+      "js/**/*.js",
+      "!js/**/*.test.js",
+      "!js/**/*.spec.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/setup.js"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "jest": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "rules": {
+      "no-console": "warn",
+      "no-unused-vars": "warn",
+      "prettier/prettier": "error"
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "arrowParens": "avoid",
+    "endOfLine": "lf"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead",
+    "not IE 11"
+  ],
+  "private": true,
+  "files": [
+    "css/",
+    "html/",
+    "js/",
+    "images/",
+    "db.json",
+    "server.js",
+    "README.md"
+  ],
+  "directories": {
+    "test": "test"
+  }
+}
