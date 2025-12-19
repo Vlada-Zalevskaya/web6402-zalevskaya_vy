@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация - Залевская Влада</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">Обо мне</a></li>
+                <li><a href="portfolio.html">Портфолио</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li><a href="login.html">Авторизация</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Авторизация</h1>
+
+        <div class="form-container">
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Логин</label>
+                    <input type="text" id="username" name="username" required>
+                    <div class="hint" id="usernameHint"></div>
+                    <div class="error" id="usernameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="hint" id="emailHint"></div>
+                    <div class="error" id="emailError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" required>
+                    <div class="hint" id="passwordHint">
+                        Пароль должен содержать не менее 8 символов, включая цифры и буквы
+                    </div>
+                    <div class="error" id="passwordError"></div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="agree" name="agree" required>
+                        <label for="agree">Согласен на обработку персональных данных</label>
+                    </div>
+                    <div class="error" id="agreeError"></div>
+                </div>
+
+                <div class="form-status" id="formStatus"></div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Войти</button>
+            </form>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <h3>Тестирование API</h3>
+            <div class="api-test-buttons">
+                <button id="testEducationBtn" class="refresh-btn">Получить данные образования</button>
+                <button id="testAddCourseBtn" class="refresh-btn">Добавить тестовый курс</button>
+                <button id="testSkillsBtn" class="refresh-btn">Получить навыки</button>
+            </div>
+            <div id="apiStatus" class="data-status" style="margin-top: 15px;"></div>
+            
+            <div id="apiDataContainer" style="margin-top: 20px; display: none;">
+                <h4>Полученные данные:</h4>
+                <pre id="apiDataPreview" style="text-align: left; background: #f5f5f5; padding: 15px; border-radius: 8px; max-height: 300px; overflow-y: auto;"></pre>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Залевская Влада.</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="utils/notifications.js"></script>
+    <script src="UserLogin.js"></script>
+    <script src="UserRegister.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
